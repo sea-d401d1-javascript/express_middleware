@@ -1,0 +1,33 @@
+{
+  "name": "express_middleware",
+  "version": "1.0.0",
+  "description": "* fork this repository\r   * write all of your code in a folder containing your name\r   * push to your repository\r   * submit a pull request to this repository\r   * submit a link to your PR in canvas",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suhk/express_middleware.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/suhk/express_middleware/issues"
+  },
+  "homepage": "https://github.com/suhk/express_middleware#readme",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "chai-http": "^1.0.0",
+    "mocha": "^2.3.4",
+    "nodemon": "^1.8.1"
+  },
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
