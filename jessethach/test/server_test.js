@@ -41,14 +41,14 @@ describe('HTTP server', () => {
     });
   });
 
-  it('should give a message about invalid json', () => {
+  it('should test middle ware and give a message about invalid json', () => {
     request('localhost:3000')
       .post('/data/')
       .send('error')
       .end((err, res) => {
         expect(err).to.eql(null);
-        expect(res).to.have.status(200);
-        expect(res).to.eql('woops');
+        expect(res).to.have.status(400);
+        expect(res.text).to.eql('{"msg":"invalid json"}');
         done();
     });
   });
