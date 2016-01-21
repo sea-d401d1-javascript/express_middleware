@@ -10,7 +10,7 @@ var uri = '/jsonSend';
 describe('functionality of the JSON parsing middleware', () => {
   after(() => server.close());
 
-  it('should save POST request at /jsonSend', (done) => {
+  it('should save a parsed POST request at /jsonSend', (done) => {
     var jsonName = {"name": "sab"};
     request(origin)
       .post(uri)

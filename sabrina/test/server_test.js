@@ -19,4 +19,14 @@ describe('rest functionality of the server', () => {
         done();
       });
   });
+
+  it('should handle 404 requests', (done) => {
+    request(origin)
+      .post('/doesnotexist')
+      .end((err, res) => {
+        expect(err).to.eql(null);
+        expect(res).to.have.status(404);
+        done();
+      });
+  });
 });
