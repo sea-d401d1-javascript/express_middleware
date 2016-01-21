@@ -1,4 +1,4 @@
-module.exports = exports = function(req, res , next) {
+module.exports = exports = function(req, res, next) {
   var jsonString = '';
   req.on('data', function(data) {
     jsonString += data.toString();
@@ -7,10 +7,8 @@ module.exports = exports = function(req, res , next) {
   req.on('end', function() {
     try {
       req.body = JSON.parse(jsonString);
-    } finally {
-      console.log('invalid json');
-      return;
-      //cb(new Error('invalid json in request'));
+    } catch(err) {
+      res.status(400).send('invalid json ');
     }
     next();
   });
