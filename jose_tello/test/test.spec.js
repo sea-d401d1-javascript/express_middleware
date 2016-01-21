@@ -21,9 +21,9 @@ describe('UNIT: tests the POST request and the error handler', () => {
   it('POST should return a message if error', (done) => {
     request('localhost:3000')
     .post('/')
-    .send({hello:world})
+    .send('string')
     .end((err, res) => {
-      expect(res).to.have.status(404);
+      expect(res.body).to.eql({msg: "invalid data sent"});
       done();
     });
   });
