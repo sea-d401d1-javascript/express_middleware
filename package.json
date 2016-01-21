@@ -1,0 +1,32 @@
+{
+  "name": "express_middleware",
+  "version": "1.0.0",
+  "description": "Middleware that Parses JSON ",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hugheskr/express_middleware.git"
+  },
+  "author": "KrisHughes <kristopher_hughes@yahoo.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hugheskr/express_middleware/issues"
+  },
+  "homepage": "https://github.com/hugheskr/express_middleware#readme",
+  "devDependencies": {
+    "chai": "3.4.1",
+    "eslint": "1.10.3",
+    "express": "4.13.3",
+    "gulp": "3.9.0",
+    "gulp-eslint": "1.1.1",
+    "gulp-jshint": "2.0.0",
+    "gulp-mocha": "2.2.0",
+    "jshint": "2.9.1"
+  }
+}
