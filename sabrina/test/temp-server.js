@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-app.post('/post', function (req, res) {
+app.post('/post', function(req, res) {
   res.send('Got a POST request');
 });
 
