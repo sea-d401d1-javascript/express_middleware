@@ -1,0 +1,19 @@
+{
+  "name": "express_middleware",
+  "version": "1.0.0",
+  "description": "Create an express middleware function that parse incoming JSON",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yueyue07/express_middleware.git"
+  },
+  "author": "Yueyue Qin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Yueyue07/express_middleware/issues"
+  },
+  "homepage": "https://github.com/Yueyue07/express_middleware#readme"
+}
