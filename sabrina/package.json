@@ -10,8 +10,8 @@
     "test": "./node_modules/mocha/bin/mocha test"
   },
   "repository": {
-  "type": "git",
-  "url": "git+https://github.com/sabbyt/express_middleware"
+    "type": "git",
+    "url": "git+https://github.com/sabbyt/express_middleware"
   },
   "author": "Sabrina Tee",
   "license": "MIT",
