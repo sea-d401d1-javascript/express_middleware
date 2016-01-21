@@ -9,7 +9,7 @@ module.exports = exports = function(req, res, next) {
       req.body = JSON.parse(toParse);
     } catch (err) {
       req.body = { msg: 'invalid json' };
-      res.statusCode = 401;
+      res.statusCode = 400;
     }
     next();
   });
