@@ -1,0 +1,27 @@
+{
+  "name": "e_mid",
+  "version": "0.1.0",
+  "description": "An express middleware assignement to parse JSON.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "basic",
+    "parse",
+    "JSON",
+    "express",
+    "middleware"
+  ],
+  "author": "Aaron Filson",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "chai-http": "^1.0.0",
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^1.1.1",
+    "gulp-mocha": "^2.2.0",
+    "gulp-util": "^3.0.7",
+    "mocha": "^2.3.4"
+  }
+}
