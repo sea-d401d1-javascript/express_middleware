@@ -6,7 +6,7 @@ const request = chai.request;
 
 const server = require(__dirname + '/../server');
 
-describe('Server', () => {
+describe('Server integration', () => {
   after(() => {
     server.close();
   });

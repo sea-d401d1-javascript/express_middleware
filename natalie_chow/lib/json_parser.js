@@ -1,13 +1,12 @@
 module.exports = exports = (req, res, next) => {
   var jsonStr = '';
-
   req.on('data', (data) => {
     jsonStr += data.toString();
   });
-
   req.on('end', () => {
     try {
       req.body = JSON.parse(jsonStr);
+      console.log('parsed: ', req.body);
       next();
     } catch (e) {
       console.error(e);
@@ -15,4 +14,4 @@ module.exports = exports = (req, res, next) => {
       res.end();
     }
   });
-}
+};
