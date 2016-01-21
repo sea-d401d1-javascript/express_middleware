@@ -7,6 +7,8 @@ const mocha = require('gulp-mocha');
 var files = ['gulpfile.js', './lib/*.js', './test/*.js',
 '!node_modules/**', '!*.json'];
 
+var testFiles = ['./test/*test.js'];
+
 gulp.task('lint', function() {
   return gulp.src(files)
   .pipe(eslint(
@@ -42,7 +44,7 @@ gulp.task('lint', function() {
 });
 
 gulp.task('mocha', function() {
-  return gulp.src(__dirname + '/test/test-router.js')
+  return gulp.src(testFiles)
   .pipe(mocha({reporter: 'nyan'}));
 });
 
