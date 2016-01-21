@@ -10,7 +10,7 @@ describe('Server', () => {
   after(() => {
     server.close();
   });
-  
+
   it('should handle a 404', (done) => {
     request('localhost:3000')
       .post('/doesnotexist')
@@ -23,13 +23,15 @@ describe('Server', () => {
   });
 
   it('should receive a parsed result when passed valid JSON', (done) => {
+    var testData = { hello: 'world', really: true };
     request('localhost:3000')
       .post('/here')
-      .send({ hello: 'world', really: true })
+      .send(testData)
       .end((err, res) => {
         expect(err).to.eql(null);
         expect(res).to.have.status(200);
         expect(res.body).to.be.an('object');
+        expect(res.body).to.eql(testData);
         done();
       });
   });
