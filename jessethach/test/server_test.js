@@ -41,7 +41,7 @@ describe('HTTP server', () => {
     });
   });
 
-  it('should test middle ware and give a message about invalid json', () => {
+  it('should test middle ware and give a message about invalid json', (done) => {
     request('localhost:3000')
       .post('/data/')
       .send('error')
@@ -52,7 +52,6 @@ describe('HTTP server', () => {
         done();
     });
   });
-
 
   it('should 404 on a page that does not exist', (done) => {
     request('localhost:3000')
