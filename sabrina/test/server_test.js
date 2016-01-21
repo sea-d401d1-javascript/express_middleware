@@ -21,4 +21,16 @@ describe('rest functionality of server', () => {
         done();
       });
   });
+
+  it('should respond to an invalid JSON POST request', (done) => {
+    var jsonName = 'sab';
+    request(origin)
+      .post(uri)
+      .send(jsonName)
+      .end((err, res) => {
+        expect(err).to.eql(null);
+        expect(res.body.msg).to.eql('Invalid JSON!');
+        done();
+      });
+  });
 });
