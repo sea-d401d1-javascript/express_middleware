@@ -10,12 +10,14 @@ var uri = '/jsonSend';
 describe('rest functionality of server', () => {
   after(() => server.close());
 
-  it('should respond to a post request', (done) => {
+  it('should respond to a POST request', (done) => {
+    var jsonName = {"name": "sab"};
     request(origin)
-      .get(uri)
+      .post(uri)
+      .send(jsonName)
       .end((err, res) => {
         expect(err).to.eql(null);
-        // expect(res.text).to.eql('POST request sent and saved!');
+        expect(res.body).to.eql(jsonName);
         done();
       });
   });

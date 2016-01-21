@@ -6,6 +6,7 @@ module.exports = exports = (req, res, next) => {
   req.on('end', () => {
     try {
       req.body = JSON.parse(jsonString);
+      console.log(req.body);
       console.log('POST request sent and saved!');
       next();
     } catch (e) {
