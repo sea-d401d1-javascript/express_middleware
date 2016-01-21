@@ -3,6 +3,7 @@ module.exports = exports = (req, res, next) => {
   req.on('data', (data) => {
     jsonStr += data.toString();
   });
+
   req.on('end', () => {
     try {
       req.body = JSON.parse(jsonStr);

@@ -7,14 +7,12 @@ describe('JSON parser', () => {
   it('should parse an incoming JSON', (done) => {
     var testData = {hello: 'world'};
     var testReq = new Stream.Writable({
-      write: function(chunk, encoding, next) {
+      write: function(chunk) {
         this.emit('data', chunk);
       }
     });
 
-    var calledNext = false;
     var testNext = function() {
-      calledNext = true;
       expect(testReq.body).to.eql(testData);
       done();
     };
@@ -26,7 +24,7 @@ describe('JSON parser', () => {
 
   it('should return error message if JSON given is invalid', (done) => {
     var testReq = new Stream.Writable({
-      write: function(chunk, encoding, next) {
+      write: function(chunk) {
         this.emit('data', chunk);
       }
     });
