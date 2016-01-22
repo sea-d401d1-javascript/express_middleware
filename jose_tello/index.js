@@ -3,7 +3,7 @@ const app = express();
 const jsonParser = require(__dirname + '/lib/json_parser');
 
 app.use(jsonParser);
-app.post('/', function(req, res) {
+app.post('/', (req, res) => {
   res.json(req.body);
   res.end();
 });

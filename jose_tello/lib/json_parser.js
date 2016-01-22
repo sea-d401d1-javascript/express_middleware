@@ -9,7 +9,7 @@ module.exports = exports = function(req, res, next) {
       next();
     } catch(e) {
       console.log(e);
-      return res.status(400).json({msg: "invalid data sent"});
+      return res.status(400).json({msg: 'invalid data sent'});
     }
   });
 };
