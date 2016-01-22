@@ -6,11 +6,11 @@ module.exports = exports = function(req,res,next){
 
   req.on('end', function() {
     try{
-      JSON.parse(jsonString);
-      req.body = jsonString;
-      next();
+      req.body = JSON.parse(jsonString);
     }catch(e){
-      res.status(500).json({ error: 'invalid json' });
+      return res.status(400).json({ error: 'invalid json' });
     }
+
+    next();
   });
 };

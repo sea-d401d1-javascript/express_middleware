@@ -33,7 +33,7 @@ describe('Test Server', () => {
         console.log(JSON.parse(res.text));
         expect(err).to.eql(null);
         expect(JSON.parse(res.text).error).to.eql('invalid json');
-        expect(res.statusCode).to.eql(500);
+        expect(res.statusCode).to.eql(400);
         done();
       });
   });
