@@ -41,18 +41,6 @@ describe('HTTP server', () => {
     });
   });
 
-  it('should test middle ware and give a message about invalid json', (done) => {
-    request('localhost:3000')
-      .post('/data/')
-      .send('error')
-      .end((err, res) => {
-        expect(err).to.eql(null);
-        expect(res).to.have.status(400);
-        expect(res.text).to.eql('{"msg":"invalid json"}');
-        done();
-    });
-  });
-
   it('should 404 on a page that does not exist', (done) => {
     request('localhost:3000')
       .get('/doesnotexist')
