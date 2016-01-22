@@ -7,12 +7,12 @@ module.exports = exports = function(req, res, next) {
 
   req.on('end', () => {
     try {
-      req.body = JSON.parse(jsonString)
+      req.body = JSON.parse(jsonString);
     } catch(e) {
-      console.log(e);
+      console.log(e);//eslint-disable-line
       return res.status(400).json({msg: 'invalid json'});
     }
 
-  next();
+    next();
   });
 };

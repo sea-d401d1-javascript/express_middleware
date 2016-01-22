@@ -19,9 +19,9 @@ app.post('/data',
   }
 );
 
-app.use((err, req, res, next) => {
-  console.error(err.stack);
+app.use((err, req, res, next) => {//eslint-disable-line
+  console.error(err.stack);//eslint-disable-line
   res.status(500).send('Along the way, something got broked.');
 });
 
-module.exports = exports = app.listen(3000, () => console.log('server up'));
+module.exports = exports = app.listen(3000, () => console.log('server up'));//eslint-disable-line
