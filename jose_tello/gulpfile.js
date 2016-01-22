@@ -1,3 +1,4 @@
+/*eslint eqeqeq:0*/
 var gulp = require('gulp'),
   mocha  = require('gulp-mocha'),
   eslint = require('gulp-eslint');
