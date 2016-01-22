@@ -36,10 +36,11 @@ describe('INTEGRATION: tests the express server', () => {
     var jsonString = fs.createReadStream(__dirname + '/../lib/sample_json.json');
     request('localhost:3000')
     .post('/')
-    .send(jsonString)
+    .send({"hello":"world"})
     .end((err, res) => {
       expect(err).to.eql(null);
       expect(res.status).to.eql(200);
+      expect(res.text).to.eql('{"hello":"world"}');
       done();
     });
   });
