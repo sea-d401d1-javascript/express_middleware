@@ -19,10 +19,13 @@ var PORT = 3000;
 var isObject = null;   //Used as a flag for POST request below. 
 											 //This doesn't reset between post requests....
 
+module.exports = exports = app;
+
 //3. On failed parse...
 //Error handling middleware, via expressjs.com
+
 app.use( (err , req , res , next) => {
-	res.status(500).send('Invalid JSON or some other thing you did wrong.');
+	res.status(500).json( {msg: 'Invalid JSON or some other thing you did wrong.' } );
 });
 
 app.get('/' , ( req , res , next ) => {
@@ -30,7 +33,7 @@ app.get('/' , ( req , res , next ) => {
 	next();
 
 } , (req , res) => {
-	res.send('Hello, thanks for the GET request.');
+	res.json( {msg:"Hello, thanks for the GET request."} );
 });
 
 app.post('/' , (req , res , next) => {
@@ -54,11 +57,11 @@ app.post('/' , (req , res , next) => {
 	//3. On parse failure...
 	if (isObject === null) {
 		console.log('POST request rejected - invalid JSON');
-		res.status(400).send('Error 400: Bad Request. Invalid JSON, check yourself.');
+		res.status(400).json( {msg:"Error 400: Invalid JSON, check yourself before you wreck yourself."} );
 	}
 	if (isObject !== null){
 		console.log('Object ' + JSON.stringify(req.body) + ' received.');
-		res.status(200).send('Thanks for the POST request: ' + JSON.stringify(req.body) );
+		res.status(200).json( {msg: 'Thanks for the POST request!'} );
 		isObject = null;
 	}
 
