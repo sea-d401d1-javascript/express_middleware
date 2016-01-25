@@ -1,0 +1,31 @@
+{
+  "name": "express_middleware",
+  "version": "1.0.0",
+  "description": "Create an express middleware function that parse incoming JSON",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha test/**/*test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yueyue07/express_middleware.git"
+  },
+  "author": "Yueyue Qin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Yueyue07/express_middleware/issues"
+  },
+  "homepage": "https://github.com/Yueyue07/express_middleware#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "chai-http": "^1.0.0",
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^1.1.1",
+    "gulp-mocha": "^2.2.0",
+    "mocha": "^2.3.4",
+    "superagent-cli": "^2.1.0"
+  }
+}
