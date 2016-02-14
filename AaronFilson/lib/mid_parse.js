@@ -1,39 +1,20 @@
-var express = require('express');
-var router = express.Router();
-var handlers = require('./handlers');
+module.exports = exports = function(req, res, next) {
+  
+  var dataObj = '';
 
-router.all('/', function(req, res, next){
-  //console.log('in the middleware router.all function 1, where we will parse JSON.');
-  var dataObj;
-  req.on('data', function(chunk){
-    //console.dir('data: ' + chunk);
+  req.on('data', (chunk) => {
     dataObj += chunk;
   });
 
   req.on('end', () => {
-    debugger;
-    //console.dir(req);
-    if(dataObj){
-      //console.log('end');
+    
+    if(dataObj) {
       try {
         req.body = JSON.parse(dataObj);
+      } catch(e) {
+        return res.status(400).json( { msg: 'invalid json' } );
       }
-      catch(e) {
-
-         console.log(e);
-      }
-
-      next();
     }
     next();
   });
-
-}, function(req, res){
-  //hand off json to handlers
-  //console.log('in next func.');
-  res.write('Should have JSON now: ' + req.body);
-  res.end();
-});
-
-
-module.exports = router;
+};
