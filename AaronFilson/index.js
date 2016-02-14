@@ -11,8 +11,8 @@ app.get('/', (req, res) => {
   res.send('Welcome to the middleware assignment home page. Try going to /go and using a post on some JSON.');
 });
 
-app.use('/go', mid_parse, (req, res) => {
+app.post('/go', mid_parse, (req, res, next) => {
   res.write('Should have JSON now: ' + req.body);
   res.end();
-  return;
+  next();
 });
